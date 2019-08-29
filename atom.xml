@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-29T02:24:00.121Z</updated>
+  <updated>2019-08-29T02:56:15.872Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,50 +20,29 @@
     <title>First</title>
     <link href="http://yoursite.com/2019/08/29/First/"/>
     <id>http://yoursite.com/2019/08/29/First/</id>
-    <published>2019-08-29T01:51:45.000Z</published>
-    <updated>2019-08-29T02:24:00.121Z</updated>
+    <published>2019-08-29T02:50:45.000Z</published>
+    <updated>2019-08-29T02:56:15.872Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://bingqiangzhou.github.io/2019/08/13/2019-8-13-how-to-set-github-io-use-hexo-with-next-md/" target="_blank" rel="noopener">周炳强</a>! This is a sample article. Let’s add some tags as above.</p>]]></content>
+    <content type="html"><![CDATA[<p>之前搞的博客，发现上传方式很难受，后来我又看了下<a href="https://bingqiangzhou.github.io/2019/08/13/2019-8-13-how-to-set-github-io-use-hexo-with-next-md/" target="_blank" rel="noopener">炳强的博客</a>后，又开始重新搞了个</p><a id="more"></a> <p>欢迎大家去看他写的，很详细，基本上把next主题翻译了</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://bingqiangzhou.github.io/2019/08/13/2019-8-13-how-to-set-github-io-use-hexo-with-next-md/&quot; target=&quot;_blank&quot; rel
-      
+      &lt;p&gt;之前搞的博客，发现上传方式很难受，后来我又看了下&lt;a href=&quot;https://bingqiangzhou.github.io/2019/08/13/2019-8-13-how-to-set-github-io-use-hexo-with-next-md/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;炳强的博客&lt;/a&gt;后，又开始重新搞了个&lt;/p&gt;
     
     </summary>
     
-      <category term="test" scheme="http://yoursite.com/categories/test/"/>
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
-      <category term="java" scheme="http://yoursite.com/categories/test/java/"/>
+      <category term="github" scheme="http://yoursite.com/categories/java/github/"/>
     
+      <category term="next" scheme="http://yoursite.com/categories/java/github/next/"/>
     
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
     
       <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Nano</title>
-    <link href="http://yoursite.com/2019/08/28/Nano/"/>
-    <id>http://yoursite.com/2019/08/28/Nano/</id>
-    <published>2019-08-28T11:23:16.000Z</published>
-    <updated>2019-08-28T11:23:42.684Z</updated>
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
     
-    <content type="html"><![CDATA[<h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><p>我来试试可不可以</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;test&quot;&gt;&lt;a href=&quot;#test&quot; class=&quot;headerlink&quot; title=&quot;test&quot;&gt;&lt;/a&gt;test&lt;/h1&gt;&lt;p&gt;我来试试可不可以&lt;/p&gt;
-
-      
-    
-    </summary>
-    
+      <category term="next" scheme="http://yoursite.com/tags/next/"/>
     
   </entry>
   
