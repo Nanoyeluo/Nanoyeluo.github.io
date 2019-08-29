@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[First]]></title>
+    <url>%2F2019%2F08%2F29%2FFirst%2F</url>
+    <content type="text"><![CDATA[Welcome to 周炳强! This is a sample article. Let’s add some tags as above.]]></content>
+      <categories>
+        <category>test</category>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Nano]]></title>
+    <url>%2F2019%2F08%2F28%2FNano%2F</url>
+    <content type="text"><![CDATA[test我来试试可不可以]]></content>
+  </entry>
+</search>
