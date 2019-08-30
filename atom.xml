@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-29T02:56:15.872Z</updated>
+  <updated>2019-08-30T03:28:37.371Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何用maven快速建立个web工程</title>
+    <link href="http://yoursite.com/2019/08/30/%E5%A6%82%E4%BD%95%E7%94%A8maven%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B%E4%B8%AAweb%E5%B7%A5%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/08/30/如何用maven快速建立个web工程/</id>
+    <published>2019-08-30T02:48:32.000Z</published>
+    <updated>2019-08-30T03:28:37.371Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近闲来无事天天看视频，发现自己以前用maven建工程方式貌似有点瓜皮，所以写个文章在记录，也方便工作学习</p><a id="more"></a> <p>#什么是maven工程#<br>maven是一个很方便构建项目的工具，有了它就可以不用到处找jar包了，而且现在越来越多的技术，貌似都是直接用maven导入的所以，我觉得还是需要搞的，而它中配置jar的地方主要是在pom.xml中写，而如果你想找要加什么东西进去，可以去<a href="https://mvnrepository.com/" target="_blank" rel="noopener">maven市场</a>中寻找。</p><h1 id="如何配置maven环境"><a href="#如何配置maven环境" class="headerlink" title="如何配置maven环境"></a>如何配置maven环境</h1><p>maven是一个java搞的东西，所以你要<a href="https://jingyan.baidu.com/article/870c6fc373aacbb03fe4bea8.html" target="_blank" rel="noopener">配置java环境</a>，不过我觉得这个东西大家估计都会就不说了，然后是<a href="https://www.cnblogs.com/liuhongfeng/p/5057827.html" target="_blank" rel="noopener">配置maven的环境</a>，感觉和配置java一样简单，所以也不说了</p><h1 id="如何配置maven为阿里私服"><a href="#如何配置maven为阿里私服" class="headerlink" title="如何配置maven为阿里私服"></a>如何配置maven为阿里私服</h1><p>由于默认maven服务器下载起来很慢，所以一般国内我还是推荐修改为阿里的私服，这样会快点，修改文件为maven解压路径下conf目录下的setting文件，需要在mirrors节点加入<code>&lt;mirror&gt;    &lt;id&gt;nexus-aliyun&lt;/id&gt;    &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;    &lt;name&gt;Nexus aliyun&lt;/name&gt;    &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;&lt;/mirror&gt;</code>    如下图所示<img src="https://i.imgur.com/YNJ4mPs.png" alt></p><h1 id="如何在eclipse中配置maven环境"><a href="#如何在eclipse中配置maven环境" class="headerlink" title="如何在eclipse中配置maven环境"></a>如何在eclipse中配置maven环境</h1><p>点击window-&gt;preferences-&gt;maven<br>这里需要修改的配置有两个地方，一个在Installations，一个在User Settings中，<br><img src="https://i.imgur.com/9RgF9nu.png" alt><br><img src="https://i.imgur.com/qE3IjrI.png" alt></p><h1 id="如何用eclipse快速建立maven的web工程"><a href="#如何用eclipse快速建立maven的web工程" class="headerlink" title="如何用eclipse快速建立maven的web工程"></a>如何用eclipse快速建立maven的web工程</h1><p>点击 File-&gt;New-&gt;Maven Project，然后弹出页面记得勾选Create a simple project 的选项，操作如下图<br><img src="https://i.imgur.com/7qw2dgD.png" alt>然后点击finish，就创建好了项目，这时候你发现很坑爹怎么没有WEB-INF与META-INF目录，<br>没事你只要右击项目选择properties-&gt;Project Facets，然后勾选掉Dynamic Web Module 点击Apply，再点击 Dynamic Web Module ，<br>就出现了 Futher configuration available… 的字眼，点击它 然后点击OK，一个Maven项目的web目录就搭建好了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近闲来无事天天看视频，发现自己以前用maven建工程方式貌似有点瓜皮，所以写个文章在记录，也方便工作学习&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="maven" scheme="http://yoursite.com/tags/maven/"/>
+    
+  </entry>
   
   <entry>
     <title>First</title>
