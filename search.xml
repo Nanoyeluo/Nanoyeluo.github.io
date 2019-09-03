@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何用springboot快速建立helloworld项目]]></title>
+    <url>%2F2019%2F09%2F03%2F%E5%A6%82%E4%BD%95%E7%94%A8springboot%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8Bhelloworld%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[什么是springbootspringboot是一个spring微服务框架，具体是什么，大家可以去spring官网上进行了解如何快速的创建helloworld项目通过springboot快速构建网站创建maven项目进入springboot快速建立网站，Project选择Maven Project，SpringBoot版本选择2.1.7，我写这篇的时候，2.1.7为稳定版，请大家自行选择当前稳定版，如不知道可以去springboot指南中去看，看见红色GA结尾的就是稳定版，然后选择依赖，也就是Dependencies，这里我们只选择Web中的SpringWebStarter。 创建helloworld将刚刚创建出来的maven项目解压缩，并导入项目，修改主目录自动生成的Application.java中的代码如下 1234567891011121314@Controller@EnableAutoConfiguration@SpringBootApplicationpublic class TestApplication &#123; @RequestMapping("/") @ResponseBody String home() &#123; return "Hello World!"; &#125; public static void main(String[] args) &#123; SpringApplication.run(TestApplication.class, args); &#125;&#125; 然后右键项目-&gt;Run as-&gt;Spring Boot App 进入localhost:8080下就能看到helloworld了]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何用maven快速建立个web工程]]></title>
     <url>%2F2019%2F08%2F30%2F%E5%A6%82%E4%BD%95%E7%94%A8maven%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B%E4%B8%AAweb%E5%B7%A5%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[最近闲来无事天天看视频，发现自己以前用maven建工程方式貌似有点瓜皮，所以写个文章在记录，也方便工作学习什么是maven工程maven是一个很方便构建项目的工具，有了它就可以不用到处找jar包了，而且现在越来越多的技术，貌似都是直接用maven导入的所以，我觉得还是需要搞的，而它中配置jar的地方主要是在pom.xml中写，而如果你想找要加什么东西进去，可以去maven市场中寻找。 如何配置maven环境maven是一个java搞的东西，所以你要配置java环境，不过我觉得这个东西大家估计都会就不说了，然后是配置maven的环境，感觉和配置java一样简单，所以也不说了 如何配置maven为阿里私服由于默认maven服务器下载起来很慢，所以一般国内我还是推荐修改为阿里的私服，这样会快点，修改文件为maven解压路径下conf目录下的setting文件，需要在mirrors节点加入 &lt;mirror&gt; &lt;id&gt;nexus-aliyun&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus aliyun&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt; &lt;/mirror&gt;如下图所示 如何在eclipse中配置maven环境点击window-&gt;preferences-&gt;maven这里需要修改的配置有两个地方，一个在Installations，一个在User Settings中， 如何用eclipse快速建立maven的web工程点击 File-&gt;New-&gt;Maven Project，然后弹出页面记得勾选Create a simple project 的选项，操作如下图然后点击finish，就创建好了项目，这时候你发现很坑爹怎么没有WEB-INF与META-INF目录，没事你只要右击项目选择properties-&gt;Project Facets，然后勾选掉Dynamic Web Module 点击Apply，再点击 Dynamic Web Module ，就出现了 Futher configuration available… 的字眼，点击它 然后点击OK，一个Maven项目的web目录就搭建好了]]></content>
+    <content type="text"><![CDATA[最近闲来无事天天看视频，发现自己以前用maven建工程方式貌似有点瓜皮，所以写个文章在记录，也方便工作学习什么是maven工程maven是一个很方便构建项目的工具，有了它就可以不用到处找jar包了，而且现在越来越多的技术，貌似都是直接用maven导入的所以，我觉得还是需要搞的，而它中配置jar的地方主要是在pom.xml中写，而如果你想找要加什么东西进去，可以去maven市场中寻找。 如何配置maven环境maven是一个java搞的东西，所以你要配置java环境，不过我觉得这个东西大家估计都会就不说了，然后是配置maven的环境，感觉和配置java一样简单，所以也不说了 如何配置maven为阿里私服由于默认maven服务器下载起来很慢，所以一般国内我还是推荐修改为阿里的私服，这样会快点，修改文件为maven解压路径下conf目录下的setting文件，需要在mirrors节点加入 123456&lt;mirror&gt; &lt;id&gt;nexus-aliyun&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus aliyun&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;&lt;/mirror&gt; 如下图所示 如何在eclipse中配置maven环境点击window-&gt;preferences-&gt;maven这里需要修改的配置有两个地方，一个在Installations，一个在User Settings中， 如何用eclipse快速建立maven的web工程点击 File-&gt;New-&gt;Maven Project，然后弹出页面记得勾选Create a simple project 的选项，操作如下图然后点击finish，就创建好了项目，这时候你发现很坑爹怎么没有WEB-INF与META-INF目录，没事你只要右击项目选择properties-&gt;Project Facets，然后勾选掉Dynamic Web Module 点击Apply，再点击 Dynamic Web Module ，就出现了 Futher configuration available… 的字眼，点击它 然后点击OK，一个Maven项目的web目录就搭建好了]]></content>
       <categories>
         <category>技术</category>
       </categories>
