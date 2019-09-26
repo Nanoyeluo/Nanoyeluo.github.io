@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-10T03:20:36.613Z</updated>
+  <updated>2019-09-26T06:37:02.434Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Navicat 怎么将属性值设为null</title>
+    <link href="http://yoursite.com/2019/09/26/Navicat-%E6%80%8E%E4%B9%88%E5%B0%86%E5%B1%9E%E6%80%A7%E5%80%BC%E8%AE%BE%E4%B8%BAnull/"/>
+    <id>http://yoursite.com/2019/09/26/Navicat-怎么将属性值设为null/</id>
+    <published>2019-09-26T06:22:20.000Z</published>
+    <updated>2019-09-26T06:37:02.434Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近本人在搞代码自测时，被一个很蠢的坑搞了，故今天分享并mark，以让自己以后不犯傻。这个坑，主要形成是这样的，作者将mysql表中的一个属性的属性值删除了，结果以为这个属性值为空了，却没想到其实为空串，于是让本人犯了一个较为愚蠢的NullPoint异常，现在就说下怎么才能删的干净。</p><h1 id="怎么用navicat改为null"><a href="#怎么用navicat改为null" class="headerlink" title="怎么用navicat改为null"></a>怎么用navicat改为null</h1><a id="more"></a><p>由于这是涉及简单操作的事情，所以我就用图来解释把。</p><h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p><img src="https://i.imgur.com/1zgDOsL.png" alt></p><h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2><p>鼠标点击那个值然后右击<br><img src="https://i.imgur.com/jBffbuw.png" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近本人在搞代码自测时，被一个很蠢的坑搞了，故今天分享并mark，以让自己以后不犯傻。这个坑，主要形成是这样的，作者将mysql表中的一个属性的属性值删除了，结果以为这个属性值为空了，却没想到其实为空串，于是让本人犯了一个较为愚蠢的NullPoint异常，现在就说下怎么才能删的干净。&lt;/p&gt;&lt;h1 id=&quot;怎么用navicat改为null&quot;&gt;&lt;a href=&quot;#怎么用navicat改为null&quot; class=&quot;headerlink&quot; title=&quot;怎么用navicat改为null&quot;&gt;&lt;/a&gt;怎么用navicat改为null&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="基础" scheme="http://yoursite.com/categories/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="navicat" scheme="http://yoursite.com/tags/navicat/"/>
+    
+  </entry>
   
   <entry>
     <title>如何用Java连接微信公众号后台，获取接口，与token</title>
