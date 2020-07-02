@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[冒泡排序]]></title>
+    <url>%2F2020%2F07%2F02%2F%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取冒泡算法基本介绍冒泡排序（Bubble Sorting）的基本思想是：通过对待排序序列从前向后（从下标较小的元素开始）,依次比较相邻元素的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部，就象水底下的气泡一样逐渐向上冒。 优化因为排序的过程中，各元素不断接近自己的位置，如果一趟比较下来没有进行过交换，就说明序列有序，因此要在排序过程中设置一个标志flag判断元素是否进行过交换。从而减少不必要的比较。 图解 代码12345678910111213141516171819202122232425262728public class BubbleSort &#123; public static void main(String[] args) &#123; int arr[] = &#123;3, 9, -1, 10, -2&#125;; //为了容易理解，我们把过程展示出来 //第一堂排序就是将最大的数排在最后 int temp = 0; boolean flag = false; //表示变量 表示是否进行锅交换 for (int i = 0; i &lt; arr.length - 1; i++) &#123; for (int j = 0; j &lt; arr.length - i - 1; j++) &#123; if (arr[j] &gt; arr[j + 1]) &#123; flag = true; temp = arr[j]; arr[j] = arr[j + 1]; arr[j + 1] = temp; &#125; &#125; System.out.println("第" + (i + 1) + "趟排序后的数组"); System.out.println(Arrays.toString(arr)); if (!flag) &#123; break; &#125; else &#123; flag = false; &#125; &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[重新开始]]></title>
     <url>%2F2020%2F07%2F02%2F%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%2F</url>
     <content type="text"><![CDATA[好久没写博客，发现写博客还是一个比较好的 学习方法，从今天起开始更新 立个flag]]></content>
