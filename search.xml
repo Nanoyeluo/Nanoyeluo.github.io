@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[重新开始]]></title>
+    <url>%2F2020%2F07%2F02%2F%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%2F</url>
+    <content type="text"><![CDATA[好久没写博客，发现写博客还是一个比较好的 学习方法，从今天起开始更新 立个flag]]></content>
+      <categories>
+        <category>杂说</category>
+      </categories>
+      <tags>
+        <tag>个人瞎说</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[好东西分享下]]></title>
     <url>%2F2019%2F09%2F27%2F%E5%A5%BD%E4%B8%9C%E8%A5%BF%E5%88%86%E4%BA%AB%E4%B8%8B%2F</url>
     <content type="text"><![CDATA[最近闲来无事，想搞下安全，权限框架，然后发现springsecurity以我现在的水平学来，很吃力，于是网上搜索，发现有一个博主写的springsecurity的文章很适合新手上手，故来分享下，只能待我日后搞明白了自己再专门写篇文章。]]></content>

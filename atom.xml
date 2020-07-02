@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-27T03:06:13.496Z</updated>
+  <updated>2020-07-02T06:45:28.230Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重新开始</title>
+    <link href="http://yoursite.com/2020/07/02/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B/"/>
+    <id>http://yoursite.com/2020/07/02/重新开始/</id>
+    <published>2020-07-02T06:42:09.000Z</published>
+    <updated>2020-07-02T06:45:28.230Z</updated>
+    
+    <content type="html"><![CDATA[<p>好久没写博客，发现写博客还是一个比较好的 学习方法，从今天起开始更新 立个flag</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;好久没写博客，发现写博客还是一个比较好的 学习方法，从今天起开始更新 立个flag&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="杂说" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AF%B4/"/>
+    
+    
+      <category term="个人瞎说" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA%E7%9E%8E%E8%AF%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>好东西分享下</title>
