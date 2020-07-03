@@ -55,22 +55,22 @@
   };
 </script>
 
-  <meta name="description" content="最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取 基本介绍">
-<meta name="keywords" content="Java,查找">
+  <meta name="description" content="最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取基本介绍当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。稀疏数组的处理方法是:记录数组一共有几行几列，有多少个不同的值把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模">
+<meta name="keywords" content="Java,数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="斐波拉契查找">
-<meta property="og:url" content="http://yoursite.com/2020/07/03/斐波拉契查找/index.html">
+<meta property="og:title" content="稀疏数组">
+<meta property="og:url" content="http://yoursite.com/2020/07/03/稀疏数组/index.html">
 <meta property="og:site_name" content="叶落">
-<meta property="og:description" content="最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取 基本介绍">
+<meta property="og:description" content="最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取基本介绍当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。稀疏数组的处理方法是:记录数组一共有几行几列，有多少个不同的值把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/fiboraSearch.png">
-<meta property="og:updated_time" content="2020-07-03T01:37:10.773Z">
+<meta property="og:image" content="http://yoursite.com/images/SparseArray.png">
+<meta property="og:updated_time" content="2020-07-03T01:52:17.463Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="斐波拉契查找">
-<meta name="twitter:description" content="最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取 基本介绍">
-<meta name="twitter:image" content="http://yoursite.com/images/fiboraSearch.png">
+<meta name="twitter:title" content="稀疏数组">
+<meta name="twitter:description" content="最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取基本介绍当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。稀疏数组的处理方法是:记录数组一共有几行几列，有多少个不同的值把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模">
+<meta name="twitter:image" content="http://yoursite.com/images/SparseArray.png">
   <link rel="alternate" href="/atom.xml" title="叶落" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/2020/07/03/斐波拉契查找/">
+  <link rel="canonical" href="http://yoursite.com/2020/07/03/稀疏数组/">
 
 
 <script id="page-configurations">
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title>斐波拉契查找 | 叶落</title>
+  <title>稀疏数组 | 叶落</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/03/斐波拉契查找/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/03/稀疏数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nano">
@@ -277,7 +277,7 @@
       <meta itemprop="name" content="叶落">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">斐波拉契查找
+        <h2 class="post-title" itemprop="name headline">稀疏数组
 
           
         </h2>
@@ -293,7 +293,7 @@
                 
               
 
-              <time title="创建时间：2020-07-03 09:31:33 / 修改时间：09:37:10" itemprop="dateCreated datePublished" datetime="2020-07-03T09:31:33+08:00">2020-07-03</time>
+              <time title="创建时间：2020-07-03 09:47:08 / 修改时间：09:52:17" itemprop="dateCreated datePublished" datetime="2020-07-03T09:47:08+08:00">2020-07-03</time>
             </span>
           
             
@@ -306,7 +306,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
 
                 
                 
@@ -346,11 +346,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取</p>
-<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p><img src="/images/fiboraSearch.png" alt></p>
-<a id="more"></a> 
+        <p>最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取</p><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。</p><p>稀疏数组的处理方法是:<br>记录数组一共有几行几列，有多少个不同的值<br>把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模</p><a id="more"></a>
 
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FibonacciSearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> maxSize = <span class="number">20</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> [] arr = &#123;<span class="number">1</span>,<span class="number">8</span>, <span class="number">10</span>, <span class="number">89</span>, <span class="number">1000</span>, <span class="number">1234</span>&#125;;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"index="</span> + fibSearch(arr, <span class="number">189</span>));<span class="comment">// 0</span></span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//因为后面我们mid=low+F(k-1)-1，需要使用到斐波那契数列，因此我们需要先获取到一个斐波那契数列</span></span><br><span class="line">	<span class="comment">//非递归方法得到一个斐波那契数列</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] fib() &#123;</span><br><span class="line">		<span class="keyword">int</span>[] f = <span class="keyword">new</span> <span class="keyword">int</span>[maxSize];</span><br><span class="line">		f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">		f[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; maxSize; i++) &#123;</span><br><span class="line">			f[i] = f[i - <span class="number">1</span>] + f[i - <span class="number">2</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> f;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//编写斐波那契查找算法</span></span><br><span class="line">	<span class="comment">//使用非递归的方式编写算法</span></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> a  数组</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> key 我们需要查找的关键码(值)</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> 返回对应的下标，如果没有-1</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fibSearch</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> high = a.length - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> k = <span class="number">0</span>; <span class="comment">//表示斐波那契分割数值的下标</span></span><br><span class="line">		<span class="keyword">int</span> mid = <span class="number">0</span>; <span class="comment">//存放mid值</span></span><br><span class="line">		<span class="keyword">int</span> f[] = fib(); <span class="comment">//获取到斐波那契数列</span></span><br><span class="line">		<span class="comment">//获取到斐波那契分割数值的下标</span></span><br><span class="line">		<span class="keyword">while</span>(high &gt; f[k] - <span class="number">1</span>) &#123;</span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//因为 f[k] 值 可能大于 a 的 长度，因此我们需要使用Arrays类，构造一个新的数组，并指向temp[]</span></span><br><span class="line">		<span class="comment">//不足的部分会使用0填充</span></span><br><span class="line">		<span class="keyword">int</span>[] temp = Arrays.copyOf(a, f[k]);</span><br><span class="line">		<span class="comment">//实际上需求使用a数组最后的数填充 temp</span></span><br><span class="line">		<span class="comment">//举例:</span></span><br><span class="line">		<span class="comment">//temp = &#123;1,8, 10, 89, 1000, 1234, 0, 0&#125;  =&gt; &#123;1,8, 10, 89, 1000, 1234, 1234, 1234,&#125;</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = high + <span class="number">1</span>; i &lt; temp.length; i++) &#123;</span><br><span class="line">			temp[i] = a[high];</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 使用while来循环处理，找到我们的数 key</span></span><br><span class="line">		<span class="keyword">while</span> (low &lt;= high) &#123; <span class="comment">// 只要这个条件满足，就可以找</span></span><br><span class="line">			mid = low + f[k - <span class="number">1</span>] - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(key &lt; temp[mid]) &#123; <span class="comment">//我们应该继续向数组的前面查找(左边)</span></span><br><span class="line">				high = mid - <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//为甚是 k--</span></span><br><span class="line">				<span class="comment">//说明</span></span><br><span class="line">				<span class="comment">//1. 全部元素 = 前面的元素 + 后边元素</span></span><br><span class="line">				<span class="comment">//2. f[k] = f[k-1] + f[k-2]</span></span><br><span class="line">				<span class="comment">//因为 前面有 f[k-1]个元素,所以可以继续拆分 f[k-1] = f[k-2] + f[k-3]</span></span><br><span class="line">				<span class="comment">//即 在 f[k-1] 的前面继续查找 k--</span></span><br><span class="line">				<span class="comment">//即下次循环 mid = f[k-1-1]-1</span></span><br><span class="line">				k--;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> ( key &gt; temp[mid]) &#123; <span class="comment">// 我们应该继续向数组的后面查找(右边)</span></span><br><span class="line">				low = mid + <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//为什么是k -=2</span></span><br><span class="line">				<span class="comment">//说明</span></span><br><span class="line">				<span class="comment">//1. 全部元素 = 前面的元素 + 后边元素</span></span><br><span class="line">				<span class="comment">//2. f[k] = f[k-1] + f[k-2]</span></span><br><span class="line">				<span class="comment">//3. 因为后面我们有f[k-2] 所以可以继续拆分 f[k-1] = f[k-3] + f[k-4]</span></span><br><span class="line">				<span class="comment">//4. 即在f[k-2] 的前面进行查找 k -=2</span></span><br><span class="line">				<span class="comment">//5. 即下次循环 mid = f[k - 1 - 2] - 1</span></span><br><span class="line">				k -= <span class="number">2</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123; <span class="comment">//找到</span></span><br><span class="line">				<span class="comment">//需要确定，返回的是哪个下标</span></span><br><span class="line">				<span class="keyword">if</span>(mid &lt;= high) &#123;</span><br><span class="line">					<span class="keyword">return</span> mid;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">return</span> high;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="/images/SparseArray.png" alt></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SparseArray</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 创建一个原始的二维数组 11 * 11</span></span><br><span class="line">		<span class="comment">// 0: 表示没有棋子， 1 表示 黑子 2 表蓝子</span></span><br><span class="line">		<span class="keyword">int</span> chessArr1[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">		chessArr1[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">		chessArr1[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">		chessArr1[<span class="number">4</span>][<span class="number">5</span>] = <span class="number">2</span>;</span><br><span class="line">		<span class="comment">// 输出原始的二维数组</span></span><br><span class="line">		System.out.println(<span class="string">"原始的二维数组~~"</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span>[] row : chessArr1) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> data : row) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%d\t"</span>, data);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 将二维数组 转 稀疏数组的思</span></span><br><span class="line">		<span class="comment">// 1. 先遍历二维数组 得到非0数据的个数</span></span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">11</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">11</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (chessArr1[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">					sum++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 2. 创建对应的稀疏数组</span></span><br><span class="line">		<span class="keyword">int</span> sparseArr[][] = <span class="keyword">new</span> <span class="keyword">int</span>[sum + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">		<span class="comment">// 给稀疏数组赋值</span></span><br><span class="line">		sparseArr[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">11</span>;</span><br><span class="line">		sparseArr[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">11</span>;</span><br><span class="line">		sparseArr[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 遍历二维数组，将非0的值存放到 sparseArr中</span></span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>; <span class="comment">//count 用于记录是第几个非0数据</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">11</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">11</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (chessArr1[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">					count++;</span><br><span class="line">					sparseArr[count][<span class="number">0</span>] = i;</span><br><span class="line">					sparseArr[count][<span class="number">1</span>] = j;</span><br><span class="line">					sparseArr[count][<span class="number">2</span>] = chessArr1[i][j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 输出稀疏数组的形式</span></span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.println(<span class="string">"得到稀疏数组为~~~~"</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sparseArr.length; i++) &#123;</span><br><span class="line">			System.out.printf(<span class="string">"%d\t%d\t%d\t\n"</span>, sparseArr[i][<span class="number">0</span>], sparseArr[i][<span class="number">1</span>], sparseArr[i][<span class="number">2</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//将稀疏数组 --》 恢复成 原始的二维数组</span></span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 *  1. 先读取稀疏数组的第一行，根据第一行的数据，创建原始的二维数组，比如上面的  chessArr2 = int [11][11]</span></span><br><span class="line"><span class="comment">			2. 在读取稀疏数组后几行的数据，并赋给 原始的二维数组 即可.</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//1. 先读取稀疏数组的第一行，根据第一行的数据，创建原始的二维数组</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> chessArr2[][] = <span class="keyword">new</span> <span class="keyword">int</span>[sparseArr[<span class="number">0</span>][<span class="number">0</span>]][sparseArr[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//2. 在读取稀疏数组后几行的数据(从第二行开始)，并赋给 原始的二维数组 即可</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; sparseArr.length; i++) &#123;</span><br><span class="line">			chessArr2[sparseArr[i][<span class="number">0</span>]][sparseArr[i][<span class="number">1</span>]] = sparseArr[i][<span class="number">2</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 输出恢复后的二维数组</span></span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.println(<span class="string">"恢复后的二维数组"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span>[] row : chessArr2) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> data : row) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%d\t"</span>, data);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -363,24 +363,12 @@
   <ul class="popular-posts">
     <li class="popular-posts-item">
       
-        <div class="popular-posts-date">2020-07-03</div>
+        <div class="popular-posts-date">2020-07-02</div>
       
       
-      <div class="popular-posts-title"><a href="\2020\07\03\二分查找\" rel="bookmark">二分查找</a></div>
+        <div class="popular-posts-img"><img src="/images/shellSort.png"></div>
       
-    </li>
-  
-    <li class="popular-posts-item">
-      
-        <div class="popular-posts-date">2020-07-03</div>
-      
-      
-        <div class="popular-posts-img"><img src="/images/insertValueQuery.png"></div>
-      
-      <div class="popular-posts-title"><a href="\2020\07\03\插值查找\" rel="bookmark">插值查找</a></div>
-      
-        <div class="popular-posts-excerpt"><p><p>最近看了下算法，就想将其记录下来，方便自己以后查找，内容大部分从尚硅谷视频中获取</p>
-<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p><img src="/images/insertValueQuery.png" alt></p></p></div>
+      <div class="popular-posts-title"><a href="\2020\07\02\希尔排序\" rel="bookmark">希尔排序</a></div>
       
     </li>
   
@@ -389,9 +377,18 @@
         <div class="popular-posts-date">2020-07-02</div>
       
       
-        <div class="popular-posts-img"><img src="/images/shellSort.png"></div>
+        <div class="popular-posts-img"><img src="/images/RadixSort1.png"></div>
       
-      <div class="popular-posts-title"><a href="\2020\07\02\希尔排序\" rel="bookmark">希尔排序</a></div>
+      <div class="popular-posts-title"><a href="\2020\07\02\基数排序\" rel="bookmark">基数排序</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2020-07-03</div>
+      
+      
+      <div class="popular-posts-title"><a href="\2020\07\03\二分查找\" rel="bookmark">二分查找</a></div>
       
     </li>
   
@@ -427,7 +424,7 @@
     <strong>本文作者： </strong>Nano</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/07/03/斐波拉契查找/" title="斐波拉契查找">http://yoursite.com/2020/07/03/斐波拉契查找/</a>
+    <a href="http://yoursite.com/2020/07/03/稀疏数组/" title="稀疏数组">http://yoursite.com/2020/07/03/稀疏数组/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -444,7 +441,7 @@
             
               <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
             
-              <a href="/tags/查找/" rel="tag"><i class="fa fa-tag"></i> 查找</a>
+              <a href="/tags/数组/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
             
           </div>
         
@@ -454,8 +451,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2020/07/03/插值查找/" rel="next" title="插值查找">
-                  <i class="fa fa-chevron-left"></i> 插值查找
+                <a href="/2020/07/03/斐波拉契查找/" rel="next" title="斐波拉契查找">
+                  <i class="fa fa-chevron-left"></i> 斐波拉契查找
                 </a>
               
             </div>
@@ -463,10 +460,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2020/07/03/稀疏数组/" rel="prev" title="稀疏数组">
-                  稀疏数组 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -518,7 +511,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本介绍"><span class="nav-number">1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本介绍"><span class="nav-number">1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图解"><span class="nav-number">2.</span> <span class="nav-text">图解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -758,7 +751,7 @@
       repo: 'Nanoyeluo.github.io',
       owner: 'Nanoyeluo',
       admin: ['Nanoyeluo'],
-      id: '640e92aed4b37bcbf2a32f0eeb79339d',
+      id: '0edfadc5193a60f4fb325d10db7a05d0',
         language: window.navigator.language || window.navigator.userLanguage,
       
       distractionFreeMode: 'true'
