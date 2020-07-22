@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[枚举]]></title>
+    <url>%2F2020%2F07%2F22%2F%E6%9E%9A%E4%B8%BE%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[泛型]]></title>
     <url>%2F2020%2F07%2F21%2F%E6%B3%9B%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[泛型的概念​ 所谓泛型，就是允许在定义类、接口时通过一个标识表示类中某个属性的类型或者是某个方法的返回值及参数类型。这个类型参数将在使用时（例如，继承或实现这个接口，用这个类型声明变量、创建对象时）确定（即传入实际的类型参数，也称为类型实参）。 ​ 从JDK1.5以后，Java引入了“参数化类型（Parameterized type）”的概念， 允许我们在创建集合时再指定集合元素的类型，正如：List，这表明 该List只能保存字符串类型的对象。 ​ JDK1.5改写了集合框架中的全部接口和类，为这些接口、类增加了泛型支持， 从而可以在声明集合变量、创建集合对象时传入类型实参。 在集合中使用泛型123456789101112131415161718192021222324252627 @Test public void test2()&#123; ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;(); list.add(78); list.add(87); list.add(99); list.add(65); //编译时，就会进行类型检查，保证数据的安全// list.add("Tom"); //方式一：// for(Integer score : list)&#123;// //避免了强转操作// int stuScore = score;//// System.out.println(stuScore);//// &#125; //方式二： Iterator&lt;Integer&gt; iterator = list.iterator(); while(iterator.hasNext())&#123; int stuScore = iterator.next(); System.out.println(stuScore); &#125; &#125; Java泛型中的标记符含义： E - Element (在集合中使用，因为集合中存放的是元素) T - Type（Java 类） K - Key（键） V - Value（值） N - Number（数值类型） ？ - 表示不确定的java类型 Java继承父类泛型的情况：123456789101112131415161718192021222324252627282930313233class Father&lt;T1, T2&gt; &#123;&#125;// 子类不保留父类的泛型// 1)没有类型 擦除class Son1 extends Father &#123;// 等价于class Son extends Father&lt;Object,Object&gt;&#123;&#125;// 2)具体类型class Son2 extends Father&lt;Integer, String&gt; &#123;&#125;// 子类保留父类的泛型// 1)全部保留class Son3&lt;T1, T2&gt; extends Father&lt;T1, T2&gt; &#125;// 2)部分保留class Son4&lt;T2&gt;** extends Father&lt;Integer, T2&gt; &#123;&#125;class Father&lt;T1, T2&gt; &#123;&#125;// 子类不保留父类的泛型// 1)没有类型 擦除class Son&lt;A, B&gt; extends Father&#123;//等价于class Son extends Father&lt;Object,Object&gt;&#123;&#125;// 2)具体类型class Son2&lt;A, B&gt; extends Father&lt;Integer, String&gt; &#123;&#125;// 子类保留父类的泛型// 1)全部保留class Son3&lt;T1, T2, A, B&gt; extends Father&lt;T1, T2&gt; &#123;&#125;// 2)部分保留class Son4&lt;T2, A, B&gt; extends Father&lt;Integer, T2&gt; &#123;&#125; 泛型方法12345678910111213//泛型方法：在方法中出现了泛型的结构，泛型参数与类的泛型参数没有任何关系。//换句话说，泛型方法所属的类是不是泛型类都没有关系。//泛型方法，可以声明为静态的。原因：泛型参数是在调用方法时确定的。并非在实例化类时确定。public static &lt;E&gt; List&lt;E&gt; copyFromArrayToList(E[] arr)&#123; ArrayList&lt;E&gt; list = new ArrayList&lt;&gt;(); for(E e : arr)&#123; list.add(e); &#125; return list;&#125; 通配符的使用1234567891011121314151617181920212223242526272829303132333435363738394041 @Test public void test3()&#123; List&lt;Object&gt; list1 = null; List&lt;String&gt; list2 = null; List&lt;?&gt; list = null; list = list1; list = list2; //编译通过// print(list1);// print(list2); // List&lt;String&gt; list3 = new ArrayList&lt;&gt;(); list3.add("AA"); list3.add("BB"); list3.add("CC"); list = list3; //添加(写入)：对于List&lt;?&gt;就不能向其内部添加数据。 //除了添加null之外。// list.add("DD");// list.add('?'); list.add(null); //获取(读取)：允许读取数据，读取的数据类型为Object。 Object o = list.get(0); System.out.println(o); &#125; public void print(List&lt;?&gt; list)&#123; Iterator&lt;?&gt; iterator = list.iterator(); while(iterator.hasNext())&#123; Object obj = iterator.next(); System.out.println(obj); &#125; &#125; 有限制的通配符&lt;? extends Number&gt; (无穷小, Number]只允许泛型为Number及Number子类的引用调用 &lt;? super Number&gt; [Number , 无穷大)只允许泛型为Number及Number父类的引用调用 &lt;? extends Comparable&gt;只允许泛型为实现Comparable接口的实现类的引用调用 12345678910111213141516171819202122232425262728293031323334353637383940414243 public class Person &#123;&#125;public class Student extends Person &#123;&#125; @Test public void test4()&#123; List&lt;? extends Person&gt; list1 = null; List&lt;? super Person&gt; list2 = null; List&lt;Student&gt; list3 = new ArrayList&lt;Student&gt;(); List&lt;Person&gt; list4 = new ArrayList&lt;Person&gt;(); List&lt;Object&gt; list5 = new ArrayList&lt;Object&gt;(); list1 = list3; list1 = list4;// list1 = list5;// list2 = list3; list2 = list4; list2 = list5; //读取数据： list1 = list3; Person p = list1.get(0); //编译不通过 //Student s = list1.get(0); list2 = list4; Object obj = list2.get(0); ////编译不通过// Person obj = list2.get(0); //写入数据： //编译不通过// list1.add(new Student()); //编译通过 list2.add(new Person()); list2.add(new Student()); &#125;]]></content>
       <categories>
-        <category>基础</category>
+        <category>Java基础</category>
       </categories>
       <tags>
+        <tag>Java基础</tag>
         <tag>java</tag>
-        <tag>泛型</tag>
       </tags>
   </entry>
   <entry>
@@ -17,7 +29,7 @@
     <url>%2F2020%2F07%2F21%2FLinux%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[Linux常用快捷键查看内存使用情况: top 和 freetop:命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.free:命令用来显示内存的使用情况Vim常用快捷键快速查询: /在normal模式下按下/即可进入查找模式，输入要查找的字符串并按下回车。 Vim会跳转到第一个匹配。按下n查找下一个，按下N查找上一个。 快速到达顶部和底部: /在normal模式下按下G即可到达底部，双击两下g即可到达顶部。 未完待续。。。 不定期更新]]></content>
       <categories>
-        <category>基础</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>Linux</tag>
@@ -28,7 +40,7 @@
     <url>%2F2020%2F07%2F21%2FIDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[IDEA常用快捷键打开的文件和工具窗口之间切换:Ctrl + Tab要在打开的文件和工具窗口之间切换，请使用切换器Ctrl + Tab。 要进行导航，请按住Ctrl键（Windows和Linux）或Command键（macOS）并使用向上和向下箭头键或Tab和Shift + Tab和Alt。按Delete或BackSpace关闭编辑器选项卡或隐藏工具窗口。 快速包装代码块: Ctrl+Alt+T要在结构中快速包装代码块，请在编辑器中将其选中，然后按Ctrl + Alt + T（“代码” |“环绕”）。可用选项（“包装器”）的列表是上下文相关的，并且取决于语言。 例如，您可以用标签将html块包围，依此类推。 使用UML类图探索包的结构: Ctrl + Alt + Shift + U使用UML类图探索包的结构，查看其组成类，子包和依赖项。 在“项目”视图中右键单击一个包，然后从上下文菜单中选择“显示类图”，或按Ctrl + Alt + Shift + U。您还可以使用“类”图创建可视模型，并用节点元素和成员填充该模型，并绘制链接。 IntelliJ IDEA将生成源代码，并使其始终与模型保持同步。 使用UML类图探索包的结构: Ctrl + Alt + Shift + U使用UML类图探索包的结构，查看其组成类，子包和依赖项。 在“项目”视图中右键单击一个包，然后从上下文菜单中选择“显示类图”，或按Ctrl + Alt + Shift + U。您还可以使用“类”图创建可视模型，并用节点元素和成员填充该模型，并绘制链接。 IntelliJ IDEA将生成源代码，并使其始终与模型保持同步。 查看快捷键: Ctrl + Shift + A如果您不记得如何调用动作，请按Ctrl + Shift + A并开始输入动作名称。 跳转至下个TODO: Ctrl + ALT+向下箭头跳转至下一个TODO 快速找到所有在符号处引用该符号的代码: Alt + F7 按Alt + F7键可以快速找到所有在符号处引用该符号的代码，无论该符号是类，方法，字段，参数还是其他语句的一部分。 折叠所有代码: crtl + shift+ 减号 将所有代码折叠 折叠选中代码: crtl + 减号 将选中代码折叠 展开所有代码: crtl + shift+ 加号 将所有代码展开 展开选中代码: crtl + 加号 将选中代码展开 运行: shift+ F10 运行当前的程序 当前文件查找: ctrl+ F在当前文件查找 当前文件替换: ctrl+ R在当前文件替换 当前窗口全屏与原先大小切换: ctrl+ shift+F12使当前窗口全屏和缩小 未完待续。。。 不定期更新]]></content>
       <categories>
-        <category>基础</category>
+        <category>开发工具</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -40,11 +52,11 @@
     <url>%2F2020%2F07%2F21%2Flambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[Lambal 表达式用法一、Lambda 表达式的基础语法：Java8中引入了一个新的操作符 “-&gt;” 该操作符称为箭头操作符或 Lambda 操作符箭头操作符将 Lambda 表达式拆分成两部分：左侧：Lambda 表达式的参数列表右侧：Lambda 表达式中所需执行的功能， 即 Lambda 体 语法格式一：无参数，无返回值 () -&gt; System.out.println(“Hello Lambda!”); 语法格式二：有一个参数，并且无返回值 (x) -&gt; System.out.println(x) 语法格式三：若只有一个参数，小括号可以省略不写 x -&gt; System.out.println(x) 语法格式四：有两个以上的参数，有返回值，并且 Lambda 体中有多条语句 Comparator com = (x, y) -&gt; { System.out.println(“函数式接口”); return Integer.compare(x, y); }; 语法格式五：若 Lambda 体中只有一条语句， return 和 大括号都可以省略不写 Comparator com = (x, y) -&gt; Integer.compare(x, y); 语法格式六：Lambda 表达式的参数列表的数据类型可以省略不写，因为JVM编译器通过上下文推断出，数据类型，即“类型推断” (Integer x, Integer y) -&gt; Integer.compare(x, y); 上联：左右遇一括号省 下联：左侧推断类型省 横批：能省则省 二、Lambda 表达式需要“函数式接口”的支持函数式接口：接口中只有一个抽象方法的接口，称为函数式接口。 可以使用注解 @FunctionalInterface 修饰 可以检查是否是函数式接口 三、代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667public class TestLambda2 &#123; @Test public void test1()&#123; int num = 0;//jdk 1.7 前，必须是 final Runnable r = new Runnable() &#123; @Override public void run() &#123; System.out.println("Hello World!" + num); &#125; &#125;; r.run(); System.out.println("-------------------------------"); Runnable r1 = () -&gt; System.out.println("Hello Lambda!"); r1.run(); &#125; @Test public void test2()&#123; Consumer&lt;String&gt; con = x -&gt; System.out.println(x); con.accept("我大尚硅谷威武！"); &#125; @Test public void test3()&#123; Comparator&lt;Integer&gt; com = (x, y) -&gt; &#123; System.out.println("函数式接口"); return Integer.compare(x, y); &#125;; &#125; @Test public void test4()&#123; Comparator&lt;Integer&gt; com = (x, y) -&gt; Integer.compare(x, y); &#125; @Test public void test5()&#123;// String[] strs;// strs = &#123;"aaa", "bbb", "ccc"&#125;; List&lt;String&gt; list = new ArrayList&lt;&gt;(); show(new HashMap&lt;&gt;()); &#125; public void show(Map&lt;String, Integer&gt; map)&#123; &#125; //需求：对一个数进行运算// @Test// public void test6()&#123;// Integer num = operation(100, (x) -&gt; x * x);// System.out.println(num);//// System.out.println(operation(200, (y) -&gt; y + 200));// &#125; // public Integer operation(Integer num, MyFun mf)&#123;// return mf.getValue(num);// &#125;&#125; Java8 内置的四大核心函数式接口Consumer : 消费型接口void accept(T t); 用来返回值为void 12345678@Testpublic void test1()&#123; happy(10000, (m) -&gt; System.out.println("你们刚哥喜欢大宝剑，每次消费：" + m + "元"));&#125; public void happy(double money, Consumer&lt;Double&gt; con)&#123; con.accept(money);&#125; Supplier 供给型接口T get(); 用来有返回值无传入值的接口 123456789101112131415161718192021//Supplier&lt;T&gt; 供给型接口 :@Testpublic void test2()&#123; List&lt;Integer&gt; numList = getNumList(10, () -&gt; (int)(Math.random() * 100)); for (Integer num : numList) &#123; System.out.println(num); &#125;&#125;//需求：产生指定个数的整数，并放入集合中public List&lt;Integer&gt; getNumList(int num, Supplier&lt;Integer&gt; sup)&#123; List&lt;Integer&gt; list = new ArrayList&lt;&gt;(); for (int i = 0; i &lt; num; i++) &#123; Integer n = sup.get(); list.add(n); &#125; return list;&#125; Function&lt;T, R&gt; : 函数型接口R apply(T t); 传入一个参数，返回一个对象 1234567891011121314//Function&lt;T, R&gt; 函数型接口：@Testpublic void test3()&#123; String newStr = strHandler("\t\t\t 我大尚硅谷威武 ", (str) -&gt; str.trim()); System.out.println(newStr); String subStr = strHandler("我大尚硅谷威武", (str) -&gt; str.substring(2, 5)); System.out.println(subStr);&#125;//需求：用于处理字符串public String strHandler(String str, Function&lt;String, String&gt; fun)&#123; return fun.apply(str);&#125; Predicate : 断言型接口boolean test(T t); 传入一个参数 ，返回一个boolean 1234567891011121314151617181920212223//Predicate&lt;T&gt; 断言型接口：@Testpublic void test4()&#123; List&lt;String&gt; list = Arrays.asList("Hello", "atguigu", "Lambda", "www", "ok"); List&lt;String&gt; strList = filterStr(list, (s) -&gt; s.length() &gt; 3); for (String str : strList) &#123; System.out.println(str); &#125;&#125;//需求：将满足条件的字符串，放入集合中public List&lt;String&gt; filterStr(List&lt;String&gt; list, Predicate&lt;String&gt; pre)&#123; List&lt;String&gt; strList = new ArrayList&lt;&gt;(); for (String str : list) &#123; if(pre.test(str))&#123; strList.add(str); &#125; &#125; return strList;&#125;]]></content>
       <categories>
-        <category>基础</category>
+        <category>Java基础</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>java8新特性</tag>
+        <tag>Java8新特性</tag>
       </tags>
   </entry>
   <entry>
@@ -56,7 +68,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>多线程</tag>
+        <tag>Java基础</tag>
       </tags>
   </entry>
   <entry>
@@ -80,7 +92,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>多线程</tag>
+        <tag>Java基础</tag>
       </tags>
   </entry>
   <entry>
@@ -92,7 +104,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>递归</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -104,7 +116,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>表达式</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -116,7 +128,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>栈</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -128,7 +140,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>链表</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -140,7 +152,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>队列</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -152,7 +164,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>数组</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -288,39 +300,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[重新开始]]></title>
-    <url>%2F2020%2F07%2F02%2F%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%2F</url>
-    <content type="text"><![CDATA[好久没写博客，发现写博客还是一个比较好的 学习方法，从今天起开始更新 立个flag]]></content>
-      <categories>
-        <category>杂说</category>
-      </categories>
-      <tags>
-        <tag>个人瞎说</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[好东西分享下]]></title>
-    <url>%2F2019%2F09%2F27%2F%E5%A5%BD%E4%B8%9C%E8%A5%BF%E5%88%86%E4%BA%AB%E4%B8%8B%2F</url>
-    <content type="text"><![CDATA[最近闲来无事，想搞下安全，权限框架，然后发现springsecurity以我现在的水平学来，很吃力，于是网上搜索，发现有一个博主写的springsecurity的文章很适合新手上手，故来分享下，只能待我日后搞明白了自己再专门写篇文章。]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>spring，springsecurity</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Springboot 如何集成 Swagger]]></title>
     <url>%2F2019%2F09%2F26%2FSpringboot-%E5%A6%82%E4%BD%95%E9%9B%86%E6%88%90-Swagger%2F</url>
     <content type="text"><![CDATA[随着本人摸鱼天数的增加，本人开始学习各种东西，今天说一个比较好用的工具Swagger。这个工具的好处是可以将后台的API接口直接暴露出来，这样前端工程师写接口传参的时候，就可以很快也很方便了。Springboot如何集成Swagger首先你需要在pom.xml中加入以下代码123456789101112&lt;!-- 集成swagger --&gt; &lt;dependency&gt; &lt;groupId&gt;io.springfox&lt;/groupId&gt; &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt; &lt;version&gt;2.9.2&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;io.springfox&lt;/groupId&gt; &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt; &lt;version&gt;2.9.2&lt;/version&gt; &lt;/dependency&gt; 具体要加入什么版本，大家自己可以去maven仓库中寻找，本人写的时候最新是2.9.2就用它了。 然后创建一个配置类Swagger2Config.java 123456789101112131415161718192021222324252627282930313233343536package com.nano.roupian.config;import org.springframework.context.annotation.Bean;import org.springframework.context.annotation.Configuration;import springfox.documentation.builders.ApiInfoBuilder;import springfox.documentation.builders.PathSelectors;import springfox.documentation.builders.RequestHandlerSelectors;import springfox.documentation.service.ApiInfo;import springfox.documentation.spi.DocumentationType;import springfox.documentation.spring.web.plugins.Docket;import springfox.documentation.swagger2.annotations.EnableSwagger2;@Configuration@EnableSwagger2public class Swagger2Config &#123; @Bean public Docket createRestApi() &#123; return new Docket(DocumentationType.SWAGGER_2) .apiInfo(apiInfo()) .select() .apis(RequestHandlerSelectors.basePackage("com.nano.roupian")) .paths(PathSelectors.any()) .build(); &#125; private ApiInfo apiInfo() &#123; return new ApiInfoBuilder() .title("肉片系统Restful API") .description("肉片系统Restful API") .termsOfServiceUrl("http://127.0.0.1:8080/") .version("1.0") .build(); &#125; &#125; 其中basePackage后面 跟的参数是你要扫描的包，而termsofServiceUrl后面跟的是swaggerUI展示的地址，这些搞好后你，你只需要去http://localhost:8080/swagger-ui.html 中就能查看到后台API了。更多详情请大家自己去官网学习把。]]></content>
       <categories>
-        <category>技术</category>
+        <category>Java</category>
+        <category>开发工具</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>springboot</tag>
-        <tag>swagger</tag>
+        <tag>Java</tag>
+        <tag>Springboot</tag>
+        <tag>Wwagger</tag>
       </tags>
   </entry>
   <entry>
@@ -328,11 +318,10 @@
     <url>%2F2019%2F09%2F26%2FNavicat-%E6%80%8E%E4%B9%88%E5%B0%86%E5%B1%9E%E6%80%A7%E5%80%BC%E8%AE%BE%E4%B8%BAnull%2F</url>
     <content type="text"><![CDATA[最近本人在搞代码自测时，被一个很蠢的坑搞了，故今天分享并mark，以让自己以后不犯傻。这个坑，主要形成是这样的，作者将mysql表中的一个属性的属性值删除了，结果以为这个属性值为空了，却没想到其实为空串，于是让本人犯了一个较为愚蠢的NullPoint异常，现在就说下怎么才能删的干净。怎么用navicat改为null 由于这是涉及简单操作的事情，所以我就用图来解释把。 First Second鼠标点击那个值然后右击]]></content>
       <categories>
-        <category>基础</category>
+        <category>开发工具</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>navicat</tag>
+        <tag>Navicat</tag>
       </tags>
   </entry>
   <entry>
@@ -340,11 +329,11 @@
     <url>%2F2019%2F09%2F10%2F%E5%A6%82%E4%BD%95%E7%94%A8Java%E8%BF%9E%E6%8E%A5%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%90%8E%E5%8F%B0%EF%BC%8C%E8%8E%B7%E5%8F%96%E6%8E%A5%E5%8F%A3%EF%BC%8C%E4%B8%8Etoken%2F</url>
     <content type="text"><![CDATA[如何打开微信公众号开发者模式相信如果如果玩过公众号都知道，要打开公众号配置，需要一个服务器地址，不过大部分人玩它是用来搞测试的，所以我就介绍一个免费的用来反向代理的软件 ngork，用它你就可以将自己8080 端口暴露给外网，而且使用简单，只需要打开它然后输入ngrok http 8080 命令就行了 java来写接入代码这代码我是从网上看哔哩哔哩写的 如果，有兴趣可以直接哔哩哔哩 java微信公众号就能收到了，首先创建一个servlet，如下 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455package WeiXinServlet;import java.io.IOException;import java.io.PrintWriter;import java.util.Map;import javax.servlet.ServletException;import javax.servlet.ServletInputStream;import javax.servlet.annotation.WebServlet;import javax.servlet.http.HttpServlet;import javax.servlet.http.HttpServletRequest;import javax.servlet.http.HttpServletResponse;import Service.WxService;/** * Servlet implementation class wxServlet */@WebServlet("/wxServlet")public class wxServlet extends HttpServlet &#123; private static final long serialVersionUID = 1L; /** * @see HttpServlet#HttpServlet() */ public wxServlet() &#123; super(); // TODO Auto-generated constructor stub &#125; /** * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response) */ protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123; // TODO Auto-generated method stub System.out.print("--------------------------------------"); String signature = request.getParameter("signature"); String timestamp = request.getParameter("timestamp"); String nonce = request.getParameter("nonce"); String echostr = request.getParameter("echostr"); //较验证请求 if(WxService.check(timestamp,nonce,signature)) &#123; PrintWriter out = response.getWriter(); //原样返回echostr参数 out.println(echostr); out.flush(); out.close(); System.out.println("接入成功"); &#125;else &#123; System.out.println("接入失败"); &#125; &#125;&#125; 通过get方法来接收传来的参数，因为微信公众号开发需要通过这三个参数，通过SHA1加密认证. 再写个service来做SHA1加密认证123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120package Service;import java.io.InputStream;import java.io.UnsupportedEncodingException;import java.security.MessageDigest;import java.util.regex.Pattern;import java.util.*;import org.dom4j.Element;import org.dom4j.io.SAXReader;import com.mysql.cj.Constants;import com.mysql.cj.util.StringUtils;import com.thoughtworks.xstream.XStream;import entity.AccessToken;import entity.Article;import entity.BaseMessage;import entity.ImageMessage;import entity.MusicMessage;import entity.NewsMessage;import entity.TextMessage;import entity.VideoMessage;import entity.VoiceMessage;import net.sf.json.JSON;import net.sf.json.JSONObject;import util.Utils;public class WxService &#123; private static final String APPID = "wxf2a10b83349c22a3"; //这个为你在配置页得到的自己的APPID private static final String APPSECRET = "749b5f9f551d30723a7d20646749cddb"; //这个为你在配置页得到的自己的APPSECRE private static final String TOKEN = "abc"; //这个为你在配置页提阿涅的TOKEN&#125;/** * * 验证签名 */ public static boolean check(String timestamp,String nonce , String signature) &#123; //1. 将token、timestamp、nonce三个蚕食进行字典序排序 String[] strs = new String[] &#123;TOKEN,timestamp,nonce&#125;; Arrays.sort(strs); //2. 将三个参数字符串拼接成一个字符串进行sha1加密 String str = strs[0]+strs[1]+strs[2]; String mysia = sha1(str); System.out.println("到达check方法中！"); System.out.println(mysia); System.out.println(signature); //3. 开发者获得加密后的字符串与signature对比，标识该请求来源于微信 return mysia.equalsIgnoreCase(signature); &#125; private static String sha1(String src) &#123; try &#123; //获取加密对象 MessageDigest md = MessageDigest.getInstance("sha1"); //加密 byte[] digest = md.digest(src.getBytes()); char[] chars = &#123;'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'&#125;; StringBuilder sb = new StringBuilder(); //处理加密结果 for(byte b:digest) &#123; sb.append(chars[(b&gt;&gt;4)&amp;15]); sb.append(chars[b&amp;15]); &#125; return sb.toString(); &#125; catch (Exception e) &#123; // TODO: handle exception System.out.println("error:"+e.getMessage()); &#125; return null; &#125; /** * 获取signature * 特别注意的是调用微信js，url必须是当前页面(转发的不行) * @throws Exception */ public static String getSignature(String url) throws Exception&#123;// 第三步:对密钥进行sha1加密 Map&lt;String, String&gt; map = new HashMap&lt;&gt;(); String ticket = getJsApiTicket(); long time = System.currentTimeMillis()/1000; String randomStr = "1485965214789631"; String str = "jsapi_ticket=" + ticket + "&amp;noncestr=" + randomStr+ "&amp;timestamp=" + time + "&amp;url="+url; String signature = ""; try &#123; MessageDigest crypt = MessageDigest.getInstance("SHA-1"); crypt.reset(); crypt.update(str.getBytes("UTF-8")); //对string1 字符串进行SHA-1加密处理 signature = byteToHex(crypt.digest()); //对加密后字符串转成16进制// signature = sha1(str); &#125; catch (Exception e) &#123; e.printStackTrace(); throw new Exception("signature生成失败!"); &#125; map.put("timeStamp", String.valueOf(time)); map.put("randomStr", randomStr); map.put("signature", signature); System.out.println("ticket:"+ticket+",result:"+com.alibaba.fastjson.JSONObject.toJSONString(map)); return com.alibaba.fastjson.JSON.toJSONString(map); &#125; private static String byteToHex(final byte[] hash) &#123; Formatter formatter = new Formatter(); for (byte b : hash) &#123; formatter.format("%02x", b); &#125; String result = formatter.toString(); formatter.close(); return result; &#125; 然后再接口配置信息填写ngrok改的URL 再点击确认 就可以了，这期间需要点时间等候 用java写获取token的方法因为微信公众号大部分功能需要获取token才能搞的，所以这里写下方法 创建个AccessToken的实体类1234567891011121314151617181920212223242526272829303132333435363738394041424344454647package org.whale.weixin.entity;/** * 保存Token（只有俩个小时的时限） * * */public class AccessToken &#123; private String accessToken; //计算过期时间 private long expireTime; public String getAccessToken() &#123; return accessToken; &#125; public void setAccessToken(String accessToken) &#123; this.accessToken = accessToken; &#125; public long getExpireTime() &#123; return expireTime; &#125; public void setExpireTime(long expireTime) &#123; this.expireTime = expireTime; &#125; public AccessToken(String accessToken, String expireIn) &#123; super(); this.accessToken = accessToken; this.expireTime = System.currentTimeMillis()+Integer.parseInt(expireIn)*1000; &#125; /** * 判断token是否过期 * @return */ public boolean isExpired() &#123; return System.currentTimeMillis()&gt;expireTime; &#125; &#125; 创建个工具类来发get与post 请求12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970package org.whale.weixin.util;import java.io.InputStream;import java.io.OutputStream;import java.net.URL;import java.net.URLConnection;public class Util &#123; // 用于存储token /** * 向指定的地址发送get请求 用于获取微信Token * * @param url * @return */ public static String get(String url) &#123; try &#123; URL urlObj = new URL(url); // 开链接 URLConnection connection = urlObj.openConnection(); InputStream is = connection.getInputStream(); byte[] b = new byte[1024]; int len; StringBuilder sb = new StringBuilder(); while ((len = is.read(b)) != -1) &#123; sb.append(new String(b, 0, len)); &#125; return sb.toString(); &#125; catch (Exception e) &#123; // TODO: handle exception &#125; return null; &#125; /** * 向指定地址发送一个post请求，待着data数据 * * @param url * @param data * @return */ public static String post(String url, String data) &#123; try &#123; URL urlObject = new URL(url); URLConnection connection = urlObject.openConnection(); // 要发鸿数据出去，必须要发送可发送数据状态 connection.setDoOutput(true); // 获取输出流 OutputStream os = connection.getOutputStream(); // 写出数据 os.write(data.getBytes()); os.close(); // 获取输入流 InputStream is = connection.getInputStream(); byte[] b = new byte[1024]; int len; StringBuilder sb = new StringBuilder(); while ((len = is.read(b)) != -1) &#123; sb.append(new String(b, 0, len)); &#125; return sb.toString(); &#125; catch (Exception e) &#123; // TODO: handle exception &#125; return null; &#125;&#125; 在service中编写获取token的方法123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960package Service;import java.io.InputStream;import java.io.UnsupportedEncodingException;import java.security.MessageDigest;import java.util.regex.Pattern;import java.util.*;import org.dom4j.Element;import org.dom4j.io.SAXReader;import com.mysql.cj.Constants;import com.mysql.cj.util.StringUtils;import com.thoughtworks.xstream.XStream;import entity.AccessToken;import entity.Article;import entity.BaseMessage;import entity.ImageMessage;import entity.MusicMessage;import entity.NewsMessage;import entity.TextMessage;import entity.VideoMessage;import entity.VoiceMessage;import net.sf.json.JSON;import net.sf.json.JSONObject;import util.Utils;public class WxService &#123; private static final String GET_TOKENURL_URL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET"; //用于存储token private static AccessToken at; /** * 获取token */ private static void getToken() &#123; String url = GET_TOKENURL_URL.replace("APPID", APPID).replace("APPSECRET", APPSECRET); String tokenStr = Utils.get(url);// System.out.println(tokenStr); JSONObject jsonObject = JSONObject.fromObject(tokenStr); String token = jsonObject.getString("access_token"); String expireIn = jsonObject.getString("expires_in"); //创建token对象，并存起来。 at = new AccessToken(token, expireIn); &#125; /** * 向外暴露的获取token的方法 * @return */ public static String getAccessToken() &#123; if(null==at||at.isExpired()) &#123; getToken(); &#125; return at.getAccessToken(); &#125;&#125; 以上便是简易的java来写微信后台的代码，由于大部分代码我是通过看别人视频获得的，所以也不详细写了，有兴趣的话可以去bilibli上搜索看看]]></content>
       <categories>
-        <category>技术</category>
+        <category>Java</category>
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>微信</tag>
+        <tag>微信公众号</tag>
       </tags>
   </entry>
   <entry>
@@ -352,11 +341,11 @@
     <url>%2F2019%2F09%2F03%2F%E5%A6%82%E4%BD%95%E7%94%A8springboot%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8Bhelloworld%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[什么是springbootspringboot是一个spring微服务框架，具体是什么，大家可以去spring官网上进行了解如何快速的创建helloworld项目通过springboot快速构建网站创建maven项目进入springboot快速建立网站，Project选择Maven Project，SpringBoot版本选择2.1.7，我写这篇的时候，2.1.7为稳定版，请大家自行选择当前稳定版，如不知道可以去springboot指南中去看，看见红色GA结尾的就是稳定版，然后选择依赖，也就是Dependencies，这里我们只选择Web中的SpringWebStarter。 创建helloworld将刚刚创建出来的maven项目解压缩，并导入项目，修改主目录自动生成的Application.java中的代码如下 1234567891011121314@Controller@EnableAutoConfiguration@SpringBootApplicationpublic class TestApplication &#123; @RequestMapping("/") @ResponseBody String home() &#123; return "Hello World!"; &#125; public static void main(String[] args) &#123; SpringApplication.run(TestApplication.class, args); &#125;&#125; 然后右键项目-&gt;Run as-&gt;Spring Boot App 进入localhost:8080下就能看到helloworld了]]></content>
       <categories>
-        <category>技术</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>spring</tag>
+        <tag>Java</tag>
+        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>
@@ -364,26 +353,12 @@
     <url>%2F2019%2F08%2F30%2F%E5%A6%82%E4%BD%95%E7%94%A8maven%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B%E4%B8%AAweb%E5%B7%A5%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[最近闲来无事天天看视频，发现自己以前用maven建工程方式貌似有点瓜皮，所以写个文章在记录，也方便工作学习什么是maven工程maven是一个很方便构建项目的工具，有了它就可以不用到处找jar包了，而且现在越来越多的技术，貌似都是直接用maven导入的所以，我觉得还是需要搞的，而它中配置jar的地方主要是在pom.xml中写，而如果你想找要加什么东西进去，可以去maven市场中寻找。 如何配置maven环境maven是一个java搞的东西，所以你要配置java环境，不过我觉得这个东西大家估计都会就不说了，然后是配置maven的环境，感觉和配置java一样简单，所以也不说了 如何配置maven为阿里私服由于默认maven服务器下载起来很慢，所以一般国内我还是推荐修改为阿里的私服，这样会快点，修改文件为maven解压路径下conf目录下的setting文件，需要在mirrors节点加入 123456&lt;mirror&gt; &lt;id&gt;nexus-aliyun&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus aliyun&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;&lt;/mirror&gt; 如下图所示 如何在eclipse中配置maven环境点击window-&gt;preferences-&gt;maven这里需要修改的配置有两个地方，一个在Installations，一个在User Settings中， 如何用eclipse快速建立maven的web工程点击 File-&gt;New-&gt;Maven Project，然后弹出页面记得勾选Create a simple project 的选项，操作如下图然后点击finish，就创建好了项目，这时候你发现很坑爹怎么没有WEB-INF与META-INF目录，没事你只要右击项目选择properties-&gt;Project Facets，然后勾选掉Dynamic Web Module 点击Apply，再点击 Dynamic Web Module ，就出现了 Futher configuration available… 的字眼，点击它 然后点击OK，一个Maven项目的web目录就搭建好了]]></content>
       <categories>
-        <category>技术</category>
+        <category>Java</category>
+        <category>开发工具</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>maven</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[First]]></title>
-    <url>%2F2019%2F08%2F29%2FFirst%2F</url>
-    <content type="text"><![CDATA[之前搞的博客，发现上传方式很难受，后来我又看了下炳强的博客后，又开始重新搞了个 欢迎大家去看他写的，很详细，基本上把next主题翻译了]]></content>
-      <categories>
-        <category>java</category>
-        <category>github</category>
-        <category>next</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>github</tag>
-        <tag>next</tag>
+        <tag>Java</tag>
+        <tag>Maven</tag>
       </tags>
   </entry>
 </search>
