@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="史上最帅高中生">
+  <meta name="description" content="当需要定义一组常量时，强烈建议使用枚举类使用说明使用 enum 定义的枚举类默认继承了 java.lang.Enum类，因此不能再继承其他类枚举类的构造器只能使用 private 权限修饰符枚举类的所有实例必须在枚举类中显式列出(, 分隔;结尾)。列出的实例系统会自动添加 public static final 修饰">
 <meta name="keywords" content="Java,Java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="枚举">
 <meta property="og:url" content="http://yoursite.com/2020/07/22/枚举/index.html">
 <meta property="og:site_name" content="叶落">
-<meta property="og:description" content="史上最帅高中生">
+<meta property="og:description" content="当需要定义一组常量时，强烈建议使用枚举类使用说明使用 enum 定义的枚举类默认继承了 java.lang.Enum类，因此不能再继承其他类枚举类的构造器只能使用 private 权限修饰符枚举类的所有实例必须在枚举类中显式列出(, 分隔;结尾)。列出的实例系统会自动添加 public static final 修饰">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-22T02:19:49.044Z">
+<meta property="og:updated_time" content="2020-07-22T05:52:55.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="枚举">
-<meta name="twitter:description" content="史上最帅高中生">
+<meta name="twitter:description" content="当需要定义一组常量时，强烈建议使用枚举类使用说明使用 enum 定义的枚举类默认继承了 java.lang.Enum类，因此不能再继承其他类枚举类的构造器只能使用 private 权限修饰符枚举类的所有实例必须在枚举类中显式列出(, 分隔;结尾)。列出的实例系统会自动添加 public static final 修饰">
   <link rel="alternate" href="/atom.xml" title="叶落" type="application/atom+xml">
   <link rel="canonical" href="http://yoursite.com/2020/07/22/枚举/">
 
@@ -291,7 +291,7 @@
                 
               
 
-              <time title="创建时间：2020-07-22 10:03:31 / 修改时间：10:19:49" itemprop="dateCreated datePublished" datetime="2020-07-22T10:03:31+08:00">2020-07-22</time>
+              <time title="创建时间：2020-07-22 10:03:31 / 修改时间：13:52:55" itemprop="dateCreated datePublished" datetime="2020-07-22T10:03:31+08:00">2020-07-22</time>
             </span>
           
             
@@ -321,7 +321,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>0</span>
+              <span>2.1k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -331,7 +331,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
           
 
@@ -344,7 +344,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h6 id="当需要定义一组常量时，强烈建议使用枚举类"><a href="#当需要定义一组常量时，强烈建议使用枚举类" class="headerlink" title="当需要定义一组常量时，强烈建议使用枚举类"></a>当需要定义一组常量时，强烈建议使用枚举类</h6><h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><p>使用 enum 定义的枚举类默认继承了 java.lang.Enum类，因此不能再继承其他类</p><p>枚举类的构造器只能使用 private 权限修饰符枚举类的所有实例必须在枚举类中显式列出(<strong>,</strong> 分隔</p><p>;结尾)。列出的实例系统会自动添加 public static final 修饰</p><a id="more"></a>
+
+
+<p>必须在枚举类的第一行声明枚举类对象</p>
+<p>JDK 1.5 中可以在 switch 表达式中使用Enum定义的枚举类的对象作为表达式, case 子句可以直接使用枚举值的名字, 无需添加枚举类作为限定。</p>
+<h3 id="Enum类的主要方法："><a href="#Enum类的主要方法：" class="headerlink" title="Enum类的主要方法："></a>Enum类的主要方法：</h3><h4 id="values-方法："><a href="#values-方法：" class="headerlink" title="values()方法："></a>values()方法：</h4><p>返回枚举类型的对象数组。该方法可以很方便地遍历所有的枚举值。</p>
+<h4 id="valueOf-String-str-："><a href="#valueOf-String-str-：" class="headerlink" title="valueOf(String str)："></a>valueOf(String str)：</h4><p>可以把一个字符串转为对应的枚举类对象。要求字符串必须是枚举类对象的“名字”。如不是，会有运行时异常：IllegalArgumentException。 </p>
+<h4 id="toString-："><a href="#toString-：" class="headerlink" title="toString()："></a>toString()：</h4><p>返回当前枚举类对象常量的名称</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Info</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用enum关键字枚举类</span></span><br><span class="line"><span class="keyword">enum</span> Season1 implements Info&#123;</span><br><span class="line">    <span class="comment">//1.提供当前枚举类的对象，多个对象之间用","隔开，末尾对象";"结束</span></span><br><span class="line">    SPRING(<span class="string">"春天"</span>,<span class="string">"春暖花开"</span>)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"春天在哪里？"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    SUMMER(<span class="string">"夏天"</span>,<span class="string">"夏日炎炎"</span>)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"宁夏"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    AUTUMN(<span class="string">"秋天"</span>,<span class="string">"秋高气爽"</span>)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"秋天不回来"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    WINTER(<span class="string">"冬天"</span>,<span class="string">"冰天雪地"</span>)&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"大约在冬季"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2.声明Season对象的属性:private final修饰</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String seasonName;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String seasonDesc;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2.私有化类的构造器,并给对象属性赋值</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Season1</span><span class="params">(String seasonName,String seasonDesc)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.seasonName = seasonName;</span><br><span class="line">        <span class="keyword">this</span>.seasonDesc = seasonDesc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4.其他诉求1：获取枚举类对象的属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSeasonName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> seasonName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSeasonDesc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> seasonDesc;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//    //4.其他诉求1：提供toString()</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    @Override</span></span><br><span class="line"><span class="comment">//    public String toString() &#123;</span></span><br><span class="line"><span class="comment">//        return "Season1&#123;" +</span></span><br><span class="line"><span class="comment">//                "seasonName='" + seasonName + '\'' +</span></span><br><span class="line"><span class="comment">//                ", seasonDesc='" + seasonDesc + '\'' +</span></span><br><span class="line"><span class="comment">//                '&#125;';</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//    @Override</span></span><br><span class="line"><span class="comment">//    public void show() &#123;</span></span><br><span class="line"><span class="comment">//        System.out.println("这是一个季节");</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -373,6 +381,15 @@
   
     <li class="popular-posts-item">
       
+        <div class="popular-posts-date">2020-07-22</div>
+      
+      
+      <div class="popular-posts-title"><a href="\2020\07\22\注解\" rel="bookmark">注解</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
         <div class="popular-posts-date">2020-07-17</div>
       
       
@@ -385,18 +402,9 @@
         <div class="popular-posts-date">2020-07-02</div>
       
       
-        <div class="popular-posts-img"><img src="/images/quickSort.png"></div>
+        <div class="popular-posts-img"><img src="/images/insertSort.png"></div>
       
-      <div class="popular-posts-title"><a href="\2020\07\02\快速排序\" rel="bookmark">快速排序</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-        <div class="popular-posts-date">2020-07-03</div>
-      
-      
-      <div class="popular-posts-title"><a href="\2020\07\03\二分查找\" rel="bookmark">二分查找</a></div>
+      <div class="popular-posts-title"><a href="\2020\07\02\插入排序\" rel="bookmark">插入排序</a></div>
       
     </li>
   
@@ -449,6 +457,10 @@
 
             <div class="post-nav-prev post-nav-item">
               
+                <a href="/2020/07/22/注解/" rel="prev" title="注解">
+                  注解 <i class="fa fa-chevron-right"></i>
+                </a>
+              
             </div>
           </div>
         
@@ -499,6 +511,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#当需要定义一组常量时，强烈建议使用枚举类"><span class="nav-number">1.</span> <span class="nav-text">当需要定义一组常量时，强烈建议使用枚举类</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用说明"><span class="nav-number"></span> <span class="nav-text">使用说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enum类的主要方法："><span class="nav-number"></span> <span class="nav-text">Enum类的主要方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#values-方法："><span class="nav-number"></span> <span class="nav-text">values()方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#valueOf-String-str-："><span class="nav-number"></span> <span class="nav-text">valueOf(String str)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toString-："><span class="nav-number"></span> <span class="nav-text">toString()：</span></a></div>
+        
       </div>
       <!--/noindex-->
 
@@ -515,7 +529,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -653,12 +667,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">121k</span>
+    <span title="站点总字数">125k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:50</span>
+    <span title="站点阅读时长">1:54</span>
 </div>
   <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
