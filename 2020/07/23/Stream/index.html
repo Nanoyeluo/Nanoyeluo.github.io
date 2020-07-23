@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="叶落">
 <meta property="og:description" content="什么是StreamStream到底是什么呢？是数据渠道，用于操作数据源（集合、数组等）所生成的元素序列。“集合讲的是数据，Stream讲的是计算！”注意：①Stream 自己不会存储元素。②Stream 不会改变源对象。相反，他们会返回一个持有结果的新Stream。 ③Stream 操作是延迟执行的。这意味着他们会等到需要结果的时候才执行。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-23T03:20:05.190Z">
+<meta property="og:updated_time" content="2020-07-23T03:28:55.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stream">
 <meta name="twitter:description" content="什么是StreamStream到底是什么呢？是数据渠道，用于操作数据源（集合、数组等）所生成的元素序列。“集合讲的是数据，Stream讲的是计算！”注意：①Stream 自己不会存储元素。②Stream 不会改变源对象。相反，他们会返回一个持有结果的新Stream。 ③Stream 操作是延迟执行的。这意味着他们会等到需要结果的时候才执行。">
@@ -291,7 +291,7 @@
                 
               
 
-              <time title="创建时间：2020-07-23 10:36:48 / 修改时间：11:20:05" itemprop="dateCreated datePublished" datetime="2020-07-23T10:36:48+08:00">2020-07-23</time>
+              <time title="创建时间：2020-07-23 10:36:48 / 修改时间：11:28:55" itemprop="dateCreated datePublished" datetime="2020-07-23T10:36:48+08:00">2020-07-23</time>
             </span>
           
             
@@ -321,7 +321,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>3.2k</span>
+              <span>3.8k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -374,6 +374,9 @@
 
 <h5 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h5><p>map——接收 Lambda ， 将元素转换成其他形式或提取信息。接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。<br>flatMap——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line">   Stream&lt;String&gt; str = emps.stream()</span><br><span class="line">      .map((e) -&gt; e.getName());</span><br><span class="line">   </span><br><span class="line">   System.out.println(<span class="string">"-------------------------------------------"</span>);</span><br><span class="line">   </span><br><span class="line">   List&lt;String&gt; strList = Arrays.asList(<span class="string">"aaa"</span>, <span class="string">"bbb"</span>, <span class="string">"ccc"</span>, <span class="string">"ddd"</span>, <span class="string">"eee"</span>);</span><br><span class="line">   </span><br><span class="line">   Stream&lt;String&gt; stream = strList.stream()</span><br><span class="line">         .map(String::toUpperCase);</span><br><span class="line">   </span><br><span class="line">   stream.forEach(System.out::println);</span><br><span class="line">   </span><br><span class="line">   Stream&lt;Stream&lt;Character&gt;&gt; stream2 = strList.stream()</span><br><span class="line">         .map(TestStreamAPI1::filterCharacter);</span><br><span class="line">   </span><br><span class="line">   stream2.forEach((sm) -&gt; &#123;</span><br><span class="line">      sm.forEach(System.out::println);</span><br><span class="line">   &#125;);</span><br><span class="line">   </span><br><span class="line">   System.out.println(<span class="string">"---------------------------------------------"</span>);</span><br><span class="line">   </span><br><span class="line">   Stream&lt;Character&gt; stream3 = strList.stream()</span><br><span class="line">         .flatMap(TestStreamAPI1::filterCharacter);</span><br><span class="line">   </span><br><span class="line">   stream3.forEach(System.out::println);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Stream&lt;Character&gt; <span class="title">filterCharacter</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">		List&lt;Character&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (Character ch : str.toCharArray()) &#123;</span><br><span class="line">			list.add(ch);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> list.stream();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><p>sorted()——自然排序<br>sorted(Comparator com)——定制排序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>&#123;</span><br><span class="line">      emps.stream()</span><br><span class="line">         .map(Employee::getName)</span><br><span class="line">         .sorted()</span><br><span class="line">         .forEach(System.out::println);</span><br><span class="line">      </span><br><span class="line">      System.out.println(<span class="string">"------------------------------------"</span>);</span><br><span class="line">      </span><br><span class="line">      emps.stream()</span><br><span class="line">         .sorted((x, y) -&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span>(x.getAge() == y.getAge())&#123;</span><br><span class="line">               <span class="keyword">return</span> x.getName().compareTo(y.getName());</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="keyword">return</span> Integer.compare(x.getAge(), y.getAge());</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;).forEach(System.out::println);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -413,21 +416,21 @@
   
     <li class="popular-posts-item">
       
+        <div class="popular-posts-date">2020-07-03</div>
+      
+      
+      <div class="popular-posts-title"><a href="\2020\07\03\二分查找\" rel="bookmark">二分查找</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
         <div class="popular-posts-date">2020-07-02</div>
       
       
         <div class="popular-posts-img"><img src="/images/bubbleSort.png"></div>
       
       <div class="popular-posts-title"><a href="\2020\07\02\冒泡排序\" rel="bookmark">冒泡排序</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-        <div class="popular-posts-date">2019-09-26</div>
-      
-      
-      <div class="popular-posts-title"><a href="\2019\09\26\Springboot-如何集成-Swagger\" rel="bookmark">Springboot 如何集成 Swagger</a></div>
       
     </li>
   
@@ -530,7 +533,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Stream"><span class="nav-number">1.</span> <span class="nav-text">什么是Stream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream-的操作三个步骤"><span class="nav-number">2.</span> <span class="nav-text">Stream 的操作三个步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-Stream的方法"><span class="nav-number">2.1.</span> <span class="nav-text">创建 Stream的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中间操作"><span class="nav-number">2.2.</span> <span class="nav-text">中间操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#筛选与切片"><span class="nav-number">2.2.1.</span> <span class="nav-text">筛选与切片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#映射"><span class="nav-number">2.2.2.</span> <span class="nav-text">映射</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Stream"><span class="nav-number">1.</span> <span class="nav-text">什么是Stream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream-的操作三个步骤"><span class="nav-number">2.</span> <span class="nav-text">Stream 的操作三个步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-Stream的方法"><span class="nav-number">2.1.</span> <span class="nav-text">创建 Stream的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中间操作"><span class="nav-number">2.2.</span> <span class="nav-text">中间操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#筛选与切片"><span class="nav-number">2.2.1.</span> <span class="nav-text">筛选与切片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#映射"><span class="nav-number">2.2.2.</span> <span class="nav-text">映射</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序"><span class="nav-number">2.2.3.</span> <span class="nav-text">排序</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -686,12 +689,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">131k</span>
+    <span title="站点总字数">132k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:59</span>
+    <span title="站点阅读时长">2:01</span>
 </div>
   <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
